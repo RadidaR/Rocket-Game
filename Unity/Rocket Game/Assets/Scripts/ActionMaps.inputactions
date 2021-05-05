@@ -1,0 +1,109 @@
+{
+    "name": "ActionMaps",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "7be2dac2-aa5f-4476-ac70-ec2384b2cdf6",
+            "actions": [
+                {
+                    "name": "Main Thruster",
+                    "type": "Value",
+                    "id": "601fb750-1674-4099-8a8c-aca8b846eb9b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Left Thruster",
+                    "type": "Value",
+                    "id": "bbc505f5-1bcd-466e-af75-bb80f8bff54c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Right Thruster",
+                    "type": "Value",
+                    "id": "8bf4d5c4-0a3a-4ebb-b6ef-6bbaebbfae2f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Left Break",
+                    "type": "Value",
+                    "id": "cccf8b18-3687-4f10-b7bf-801da5bd855d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Right Break",
+                    "type": "Value",
+                    "id": "be5168a9-2398-4819-bb99-9fd542468241",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9c8737e0-7433-410d-8d4c-e2ffd2167123",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Main Thruster",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2701562a-be54-40e1-8b4b-a6a1d4efc9a4",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Left Thruster",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "97c6b057-f6b9-4373-a6a9-54618ee5706b",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Right Thruster",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bc5bd38f-18cc-41b2-99ee-3e2acf487965",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Left Break",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a6d4942f-5d4f-4e61-9550-d59d98d4db7f",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Right Break",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
