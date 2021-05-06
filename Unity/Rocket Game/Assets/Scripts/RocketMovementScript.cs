@@ -7,39 +7,39 @@ public class RocketMovementScript : MonoBehaviour
 {
     ActionMaps inputActions;
 
-    public float mainThrusterInput;
+    
+    [Header("Main Thruster")]
+    float mainThrusterInput;
     public float mainThrusterForce;
-
-    public float leftThrusterInput;
-    public float leftThrusterForce;
-
-    public float rightThrusterInput;
-    public float rightThrusterForce;
-
-    public float leftBreakInput;
-    public float leftBreakForce;
-
-    public float rightBreakInput;
-    public float rightBreakForce;
+    public float currentMainFuel;
+    public float maxMainFuel;
+    public float mainDrainRate;
 
 
+    [Header("Side Thrusters")]
+    float leftThrusterInput;
+    float rightThrusterInput;
+    public float sideThrusterForce;
+
+    [Header("Breaks")]
+    float leftBreakInput;
+    float rightBreakInput;
+    public float breakForce;
+
+    [Header("Side Fuel")]
+    public float currentLeftFuel;
+    public float currentRightFuel;
+    public float maxSideFuel;
+    public float sideDrainRate;
+    public float breakDrainRate;
+
+    [Header("RigidBodies")]
     public Rigidbody2D mainThrusterRB;
     public Rigidbody2D leftThrusterRB;
     public Rigidbody2D rightThrusterRB;
     public Rigidbody2D leftBreakRB;
     public Rigidbody2D rightBreakRB;
 
-    private void OnValidate()
-    {
-        if (gameObject.activeInHierarchy)
-        {
-            mainThrusterRB = gameObject.transform.Find("Main Thruster").gameObject.GetComponent<Rigidbody2D>();
-            leftThrusterRB = gameObject.transform.Find("Left Thruster").gameObject.GetComponent<Rigidbody2D>();
-            rightThrusterRB = gameObject.transform.Find("Right Thruster").gameObject.GetComponent<Rigidbody2D>();
-            leftBreakRB = gameObject.transform.Find("Left Break").gameObject.GetComponent<Rigidbody2D>();
-            rightBreakRB = gameObject.transform.Find("Right Break").gameObject.GetComponent<Rigidbody2D>();
-        }
-    }
     void Awake()
     {
         inputActions = new ActionMaps();
@@ -53,28 +53,60 @@ public class RocketMovementScript : MonoBehaviour
         inputActions.Gameplay.RightThruster.performed += ctx => rightThrusterInput = inputActions.Gameplay.RightThruster.ReadValue<float>();
         inputActions.Gameplay.RightThruster.canceled += ctx => rightThrusterInput = inputActions.Gameplay.RightThruster.ReadValue<float>();
 
-        inputActions.Gameplay.LeftBreak.performed += ctx => leftBreakInput = inputActions.Gameplay.LeftBreak.ReadValue<float>();
+        inputActions.Gameplay.LeftBreak.performed += ctx => leftBreakInput = inputActions.Gameplay.LeftBreak.ReadValue<float>() * -1;
         inputActions.Gameplay.LeftBreak.canceled += ctx => leftBreakInput = inputActions.Gameplay.LeftBreak.ReadValue<float>();
 
-        inputActions.Gameplay.RightBreak.performed += ctx => rightBreakInput = inputActions.Gameplay.RightBreak.ReadValue<float>();
+        inputActions.Gameplay.RightBreak.performed += ctx => rightBreakInput = inputActions.Gameplay.RightBreak.ReadValue<float>() * -1;
         inputActions.Gameplay.RightBreak.canceled += ctx => rightBreakInput = inputActions.Gameplay.RightBreak.ReadValue<float>();
+    }
+
+    private void Start()
+    {
+        currentMainFuel = maxMainFuel;
+        currentLeftFuel = maxSideFuel;
+        currentRightFuel = maxSideFuel;
     }
 
     void FixedUpdate()
     {
         if (mainThrusterInput != 0 || leftThrusterInput != 0 || rightThrusterInput != 0 || leftBreakInput != 0 || rightBreakInput != 0)
         {
-            Move();
+            Move(mainThrusterRB, mainThrusterForce, mainThrusterInput, currentMainFuel);
+            currentMainFuel = DrainFuel(currentMainFuel, mainDrainRate, mainThrusterInput);
+
+            Move(leftThrusterRB, sideThrusterForce, leftThrusterInput, currentLeftFuel);
+            currentLeftFuel = DrainFuel(currentLeftFuel, sideDrainRate, leftThrusterInput);
+
+            Move(rightThrusterRB, sideThrusterForce, rightThrusterInput, currentRightFuel);
+            currentRightFuel = DrainFuel(currentRightFuel, sideDrainRate, rightThrusterInput);
+
+            Move(leftBreakRB, breakForce, leftBreakInput, currentLeftFuel);
+            currentLeftFuel = DrainFuel(currentLeftFuel, breakDrainRate, leftBreakInput);
+
+            Move(rightBreakRB, breakForce, rightBreakInput, currentRightFuel);
+            currentRightFuel = DrainFuel(currentRightFuel, breakDrainRate, rightBreakInput);
+        }        
+    }
+
+    void Move(Rigidbody2D rb, float force, float direction, float currentFuel)
+    {
+        if (currentFuel != 0)
+        {
+            rb.AddRelativeForce(Vector2.up * force * direction);
         }
     }
 
-    void Move()
+    float DrainFuel(float fuelDrained, float drainRate, float modifier)
     {
-        mainThrusterRB.AddRelativeForce(Vector2.up * mainThrusterForce * mainThrusterInput);
-        leftThrusterRB.AddRelativeForce(Vector2.up * leftThrusterForce * leftThrusterInput);
-        rightThrusterRB.AddRelativeForce(Vector2.up * rightThrusterForce * rightThrusterInput);
-        leftBreakRB.AddRelativeForce(Vector2.down * leftBreakForce * leftBreakInput);
-        rightBreakRB.AddRelativeForce(Vector2.down * rightBreakForce * rightBreakInput);
+        if (fuelDrained > 0)
+        {
+            fuelDrained -= Time.fixedDeltaTime * drainRate * Mathf.Abs(modifier);
+        }
+        else
+        {
+            fuelDrained = 0;
+        }
+        return fuelDrained;
     }
 
     private void OnEnable()

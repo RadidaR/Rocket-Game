@@ -1,0 +1,412 @@
+fileFormatVersion: 2
+guid: a0149cf549f90d74eb25c7eedc70618d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Breaks Outline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 463
+      width: 401
+      height: 33
+    spriteID: da6c8e54120c69e44b88b36c8a96ef5f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 279, y: 136}
+  - name: Breaks Colour
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 504
+      width: 398
+      height: 30
+    spriteID: cd4a172a8ad9bfd4cac902e709780743
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 277, y: 174}
+  - name: Side Thrusters Outline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 346
+      width: 448
+      height: 54
+    spriteID: 48874c40ad9e6984786e0f9168c31612
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 302, y: 80}
+  - name: Side Thrusters Colour
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 408
+      width: 444
+      height: 47
+    spriteID: 8703238dbe16cb1409fbffe6d7c6121a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 300, y: 140}
+  - name: Main Thruster Outline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 4
+      width: 412
+      height: 166
+    spriteID: 6271b2ab08683c54a8d481a74c990720
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 290, y: -33}
+  - name: Main Thruster Colour
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 178
+      width: 408
+      height: 160
+    spriteID: ff0dcd53c51393b4b8e1761513a578cc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 288, y: 137}
+  - name: Rocket Outline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 372
+      height: 518
+    spriteID: c55e4865ed5f6bf4c946c36e75be4b25
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -116, y: -69}
+  - name: Sludge Colour
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1046
+      width: 299
+      height: 289
+    spriteID: 5330ac452c62b174fad8925779afb382
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -152, y: 910}
+  - name: Windows
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 804
+      y: 4
+      width: 100
+      height: 141
+    spriteID: 73037dec56d903442aede51a071e438d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 643, y: -308}
+  - name: Rocket Colour
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 530
+      width: 362
+      height: 508
+    spriteID: e3b2e752efe968c4ba52c755dc55eca0
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -121, y: 453}
+  platformSettings: []
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 1024
+  importedTextureHeight: 2048
+  documentSize: {x: 597, y: 613}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 1024
+  textureActualHeight: 2048
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Breaks Outline
+    spriteName: Breaks Outline
+    isGroup: 0
+    parentIndex: -1
+    spriteID: da6c8e54120c69e44b88b36c8a96ef5f
+    layerID: 0
+    mosaicPosition: {x: 384, y: 463}
+  - name: Breaks Colour
+    spriteName: Breaks Colour
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cd4a172a8ad9bfd4cac902e709780743
+    layerID: -1765468938
+    mosaicPosition: {x: 384, y: 504}
+  - name: Side Thrusters Outline
+    spriteName: Side Thrusters Outline
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 48874c40ad9e6984786e0f9168c31612
+    layerID: 1348225583
+    mosaicPosition: {x: 384, y: 346}
+  - name: Side Thrusters Colour
+    spriteName: Side Thrusters Colour
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8703238dbe16cb1409fbffe6d7c6121a
+    layerID: -383748725
+    mosaicPosition: {x: 384, y: 408}
+  - name: Main Thruster Outline
+    spriteName: Main Thruster Outline
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6271b2ab08683c54a8d481a74c990720
+    layerID: -1051543058
+    mosaicPosition: {x: 384, y: 4}
+  - name: Main Thruster Colour
+    spriteName: Main Thruster Colour
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ff0dcd53c51393b4b8e1761513a578cc
+    layerID: -1597058584
+    mosaicPosition: {x: 384, y: 178}
+  - name: Rocket Outline
+    spriteName: Rocket Outline
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c55e4865ed5f6bf4c946c36e75be4b25
+    layerID: -2134930032
+    mosaicPosition: {x: 4, y: 4}
+  - name: Sludge Colour
+    spriteName: Sludge Colour
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5330ac452c62b174fad8925779afb382
+    layerID: 277783952
+    mosaicPosition: {x: 4, y: 1046}
+  - name: Windows
+    spriteName: Windows
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 73037dec56d903442aede51a071e438d
+    layerID: 123983067
+    mosaicPosition: {x: 804, y: 4}
+  - name: Rocket Colour
+    spriteName: Rocket Colour
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e3b2e752efe968c4ba52c755dc55eca0
+    layerID: -228915762
+    mosaicPosition: {x: 4, y: 530}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: Rocket 1 PSB Texture
+  prefabAssetName: Rocket 1 PSB Prefab
+  spriteLibAssetName: Rocket 1 PSB Sprite Lib
+  secondarySpriteTextures: []
