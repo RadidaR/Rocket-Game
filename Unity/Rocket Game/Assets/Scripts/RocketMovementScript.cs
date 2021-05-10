@@ -11,9 +11,6 @@ public class RocketMovementScript : MonoBehaviour
     [Header("Main Thruster")]
     float mainThrusterInput;
     public float mainThrusterForce;
-    public float currentMainFuel;
-    public float maxMainFuel;
-    public float mainDrainRate;
 
     [Header("Side Thrusters")]
     float leftThrusterInput;
@@ -25,7 +22,10 @@ public class RocketMovementScript : MonoBehaviour
     float rightBreakInput;
     public float breakForce;
 
-    [Header("Side Fuel")]
+    [Header("Fuel")]
+    public float currentMainFuel;
+    public float maxMainFuel;
+    public float mainDrainRate;
     public float currentLeftFuel;
     public float currentRightFuel;
     public float maxSideFuel;
