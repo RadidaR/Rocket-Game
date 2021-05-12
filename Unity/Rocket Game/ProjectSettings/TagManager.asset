@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 4056798449
+    locked: 0
+  - name: Planets
+    uniqueID: 324990217
+    locked: 0
+  - name: Rocket
+    uniqueID: 2436069477
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
