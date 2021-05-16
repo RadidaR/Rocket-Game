@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c93b2fda9663c4286ead187f8f3919, type: 3}
+  m_Name: Movement Data
+  m_EditorClassIdentifier: 
+  mainThrusterForce: 25
+  sideThrustersForce: 8
+  breakThrustersForce: 5
+  currentMainFuel: 0
+  currentLeftFuel: 0
+  currentRightFuel: 0
+  mainTankMaxFuel: 100
+  sideTanksMaxFuel: 50
+  mainFuelDrainRate: 3
+  sideFuelDrainRate: 2
+  breakFuelDrainRate: 1

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RocketCanvasScript : MonoBehaviour
 {
-    RocketMovementScript moveScript;
+    public MovementData movementData;
 
     public Slider mainTankSlider;
     public Slider leftTankSlider;
@@ -13,22 +13,19 @@ public class RocketCanvasScript : MonoBehaviour
 
     private void OnValidate()
     {
-        if (gameObject.activeInHierarchy)
-        {
-            moveScript = GetComponent<RocketMovementScript>();
-        }
     }
+
     void Start()
     {
-        mainTankSlider.maxValue = moveScript.maxMainFuel;
-        leftTankSlider.maxValue = moveScript.maxSideFuel;
-        rightTankSlider.maxValue = moveScript.maxSideFuel;
+        mainTankSlider.maxValue = movementData.mainTankMaxFuel;
+        leftTankSlider.maxValue = movementData.sideTanksMaxFuel;
+        rightTankSlider.maxValue = movementData.sideTanksMaxFuel;
     }
 
     void Update()
     {
-        mainTankSlider.value = moveScript.currentMainFuel;
-        leftTankSlider.value = moveScript.currentLeftFuel;
-        rightTankSlider.value = moveScript.currentRightFuel;
+        mainTankSlider.value = movementData.currentMainFuel;
+        leftTankSlider.value = movementData.currentLeftFuel;
+        rightTankSlider.value = movementData.currentRightFuel;
     }
 }

@@ -7,30 +7,8 @@ public class RocketMovementScript : MonoBehaviour
 {
     ActionMaps inputActions;
 
-    
-    [Header("Main Thruster")]
-    float mainThrusterInput;
-    public float mainThrusterForce;
-
-    [Header("Side Thrusters")]
-    float leftThrusterInput;
-    float rightThrusterInput;
-    public float sideThrusterForce;
-
-    [Header("Breaks")]
-    float leftBreakInput;
-    float rightBreakInput;
-    public float breakForce;
-
-    [Header("Fuel")]
-    public float currentMainFuel;
-    public float maxMainFuel;
-    public float mainDrainRate;
-    public float currentLeftFuel;
-    public float currentRightFuel;
-    public float maxSideFuel;
-    public float sideDrainRate;
-    public float breakDrainRate;
+    public InputData inputData;
+    public MovementData movementData;
 
     [Header("RigidBodies")]
     public Rigidbody2D mainThrusterRB;
@@ -50,32 +28,32 @@ public class RocketMovementScript : MonoBehaviour
     {
         inputActions = new ActionMaps();
 
-        inputActions.Gameplay.MainThruster.performed += ctx => mainThrusterInput = inputActions.Gameplay.MainThruster.ReadValue<float>();
-        inputActions.Gameplay.MainThruster.canceled += ctx => mainThrusterInput = inputActions.Gameplay.MainThruster.ReadValue<float>();
+        inputActions.Gameplay.MainThruster.performed += ctx => inputData.mThrustInput = inputActions.Gameplay.MainThruster.ReadValue<float>();
+        inputActions.Gameplay.MainThruster.canceled += ctx => inputData.mThrustInput = inputActions.Gameplay.MainThruster.ReadValue<float>();
         inputActions.Gameplay.MainThruster.canceled += ctx => mainParticle.Stop();
 
-        inputActions.Gameplay.LeftThruster.performed += ctx => leftThrusterInput = inputActions.Gameplay.LeftThruster.ReadValue<float>();
-        inputActions.Gameplay.LeftThruster.canceled += ctx => leftThrusterInput = inputActions.Gameplay.LeftThruster.ReadValue<float>();
+        inputActions.Gameplay.LeftThruster.performed += ctx => inputData.lThrustInput = inputActions.Gameplay.LeftThruster.ReadValue<float>();
+        inputActions.Gameplay.LeftThruster.canceled += ctx => inputData.lThrustInput = inputActions.Gameplay.LeftThruster.ReadValue<float>();
         inputActions.Gameplay.LeftThruster.canceled += ctx => leftThrusterParticle.Stop();
 
-        inputActions.Gameplay.RightThruster.performed += ctx => rightThrusterInput = inputActions.Gameplay.RightThruster.ReadValue<float>();
-        inputActions.Gameplay.RightThruster.canceled += ctx => rightThrusterInput = inputActions.Gameplay.RightThruster.ReadValue<float>();
+        inputActions.Gameplay.RightThruster.performed += ctx => inputData.rThrustInput = inputActions.Gameplay.RightThruster.ReadValue<float>();
+        inputActions.Gameplay.RightThruster.canceled += ctx => inputData.rThrustInput = inputActions.Gameplay.RightThruster.ReadValue<float>();
         inputActions.Gameplay.RightThruster.canceled += ctx => rightThrusterParticle.Stop();
 
-        inputActions.Gameplay.LeftBreak.performed += ctx => leftBreakInput = inputActions.Gameplay.LeftBreak.ReadValue<float>() * -1;
-        inputActions.Gameplay.LeftBreak.canceled += ctx => leftBreakInput = inputActions.Gameplay.LeftBreak.ReadValue<float>();
+        inputActions.Gameplay.LeftBreak.performed += ctx => inputData.lBreakInput = inputActions.Gameplay.LeftBreak.ReadValue<float>() * -1;
+        inputActions.Gameplay.LeftBreak.canceled += ctx => inputData.lBreakInput = inputActions.Gameplay.LeftBreak.ReadValue<float>();
         inputActions.Gameplay.LeftBreak.canceled += ctx => leftBreakParticle.Stop();
 
-        inputActions.Gameplay.RightBreak.performed += ctx => rightBreakInput = inputActions.Gameplay.RightBreak.ReadValue<float>() * -1;
-        inputActions.Gameplay.RightBreak.canceled += ctx => rightBreakInput = inputActions.Gameplay.RightBreak.ReadValue<float>();
+        inputActions.Gameplay.RightBreak.performed += ctx => inputData.rBreakInput = inputActions.Gameplay.RightBreak.ReadValue<float>() * -1;
+        inputActions.Gameplay.RightBreak.canceled += ctx => inputData.rBreakInput = inputActions.Gameplay.RightBreak.ReadValue<float>();
         inputActions.Gameplay.RightBreak.canceled += ctx => rightBreakParticle.Stop();
     }
 
     private void Start()
-    {
-        currentMainFuel = maxMainFuel;
-        currentLeftFuel = maxSideFuel;
-        currentRightFuel = maxSideFuel;
+    {        
+        movementData.currentMainFuel = movementData.mainTankMaxFuel;
+        movementData.currentLeftFuel = movementData.sideTanksMaxFuel;
+        movementData.currentRightFuel = movementData.sideTanksMaxFuel;
 
         mainParticle.Stop();
         leftThrusterParticle.Stop();
@@ -86,34 +64,34 @@ public class RocketMovementScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (mainThrusterInput != 0)
+        if (inputData.mThrustInput != 0)
         {
-            Move(mainThrusterRB, mainThrusterForce, mainThrusterInput, currentMainFuel, mainParticle);
-            currentMainFuel = DrainFuel(currentMainFuel, mainDrainRate, mainThrusterInput);
+            Move(mainThrusterRB, movementData.mainThrusterForce, inputData.mThrustInput, movementData.currentMainFuel, mainParticle);
+            movementData.currentMainFuel = DrainFuel(movementData.currentMainFuel, movementData.mainFuelDrainRate, inputData.mThrustInput);
         }
 
-        if (leftThrusterInput != 0)
+        if (inputData.lThrustInput != 0)
         {
-            Move(leftThrusterRB, sideThrusterForce, leftThrusterInput, currentLeftFuel, leftThrusterParticle);
-            currentLeftFuel = DrainFuel(currentLeftFuel, sideDrainRate, leftThrusterInput);
+            Move(leftThrusterRB, movementData.sideThrustersForce, inputData.lThrustInput, movementData.currentLeftFuel, leftThrusterParticle);
+            movementData.currentLeftFuel = DrainFuel(movementData.currentLeftFuel, movementData.sideFuelDrainRate, inputData.lThrustInput);
         }
 
-        if (rightThrusterInput != 0)
+        if (inputData.rThrustInput != 0)
         {
-            Move(rightThrusterRB, sideThrusterForce, rightThrusterInput, currentRightFuel, rightThrusterParticle);
-            currentRightFuel = DrainFuel(currentRightFuel, sideDrainRate, rightThrusterInput);
+            Move(rightThrusterRB, movementData.sideThrustersForce, inputData.rThrustInput, movementData.currentRightFuel, rightThrusterParticle);
+            movementData.currentRightFuel = DrainFuel(movementData.currentRightFuel, movementData.sideFuelDrainRate, inputData.rThrustInput);
         }
 
-        if (leftBreakInput != 0)
+        if (inputData.lBreakInput != 0)
         {
-            Move(leftBreakRB, breakForce, leftBreakInput, currentLeftFuel, leftBreakParticle);
-            currentLeftFuel = DrainFuel(currentLeftFuel, breakDrainRate, leftBreakInput);
+            Move(leftBreakRB, movementData.breakThrustersForce, inputData.lBreakInput, movementData.currentLeftFuel, leftBreakParticle);
+            movementData.currentLeftFuel = DrainFuel(movementData.currentLeftFuel, movementData.breakFuelDrainRate, inputData.lBreakInput);
         }
 
-        if (rightBreakInput != 0)
+        if (inputData.rBreakInput != 0)
         { 
-            Move(rightBreakRB, breakForce, rightBreakInput, currentRightFuel, rightBreakParticle);
-            currentRightFuel = DrainFuel(currentRightFuel, breakDrainRate, rightBreakInput);
+            Move(rightBreakRB, movementData.breakThrustersForce, inputData.rBreakInput, movementData.currentRightFuel, rightBreakParticle);
+            movementData.currentRightFuel = DrainFuel(movementData.currentRightFuel, movementData.breakFuelDrainRate, inputData.rBreakInput);
         }        
     }
 
