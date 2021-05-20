@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec354ff2e5d39c469c584a212996314, type: 3}
   m_Name: Game Data
   m_EditorClassIdentifier: 
-  lastPlatformPosition: {x: 0, y: 0}
-  lastPlatformRotation: {x: 0, y: 0, z: 0, w: 1}
+  lastPlatformPosition: {x: 0.5388757, y: 313.00146}
+  lastPlatformRotation: {x: -0, y: -0, z: -0, w: 1}
+  mainFuel: 499.64
+  leftFuel: 150
+  rightFuel: 150
+  planetsSpawned: 1

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72def50ccfe07014db4fb1e1606249e8, type: 3}
   m_Name: Stats Data
   m_EditorClassIdentifier: 
-  maxLives: 0
-  currentLives: 0
+  maxLives: 5
+  currentLives: 3
   respawning: 1
-  nearPlatform: 1
+  nearPlatform: 0

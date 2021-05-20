@@ -6,29 +6,33 @@ public class PlanetSpawnerScript : MonoBehaviour
 {
     public GameObject prefabPlanet;
 
-    public Transform lastPlanetPosition;
-    public Transform newPlanetPosition;
+    //public Transform lastPlanetPosition;
+    //public Transform newPlanetPosition;
 
     public GameData gameData;
 
     public GameObject newPlanet;
 
+    public GameEvent ePlanetSpawned;
+
     private void Awake()
     {
-        SpawnPlanet();
+        //SpawnPlanet();
     }
 
-    private void SpawnPlanet()
+    public void SpawnPlanet()
     {
-        Vector2 newPosition = lastPlanetPosition.position;
+        Vector2 newPosition = GetComponent<GameManagerScript>().lastVisitedPlanet.transform.position;
 
-        newPosition.x = Random.Range(newPosition.x + 100, newPosition.x + 150);
-        newPosition.y = Random.Range(newPosition.y + 75, newPosition.y - 75);
+        newPosition.x = Random.Range(newPosition.x + 150, newPosition.x + 250);
+        newPosition.y = Random.Range(newPosition.y + 25, newPosition.y - 25);
 
-        newPlanetPosition.position = newPosition;
+        newPlanet = Instantiate(prefabPlanet, newPosition, Quaternion.Euler(0, 0, Random.Range(0, 360)));
 
-        newPlanet = Instantiate(prefabPlanet, newPlanetPosition);
-
+        ePlanetSpawned.Raise();
         gameData.planetsSpawned++;
     }
 }
+
+        //newPlanetPosition.position = newPosition;
+        //GetComponent<GameManagerScript>().nextPlanet = newPlanet;

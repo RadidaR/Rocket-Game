@@ -46,12 +46,34 @@ public class GameManagerScript : MonoBehaviour
         //    }
         //}
 
-        lastVisitedPlanet = rocketCollision.currentPlanet;
-        nextPlanet = planetSpawner.newPlanet;
+        //lastVisitedPlanet = rocketCollision.currentPlanet;
+        //nextPlanet = planetSpawner.newPlanet;
 
         if (lastVisitedPlanet != null && nextPlanet != null)
         { 
-            boundaries.position = new Vector2((lastVisitedPlanet.transform.position.x + nextPlanet.transform.position.x) / 2, 0);
+            boundaries.position = new Vector2((lastVisitedPlanet.transform.position.x + nextPlanet.transform.position.x) / 2, 
+                (lastVisitedPlanet.transform.position.y + nextPlanet.transform.position.y) / 2);
+        }
+    }
+
+    public void NewPlanet()
+    {
+        nextPlanet = planetSpawner.newPlanet;
+    }
+
+
+    public void CheckPoint()
+    {
+        if (rocketCollision.currentPlanet != null)
+        {
+            lastVisitedPlanet = rocketCollision.currentPlanet;
+
+            gameData.lastPlatformPosition = lastVisitedPlanet.transform.GetChild(0).transform.GetChild(1).transform.position;
+            gameData.lastPlatformRotation = lastVisitedPlanet.transform.GetChild(0).transform.GetChild(1).transform.rotation;
+
+            gameData.mainFuel = movementData.currentMainFuel;
+            gameData.leftFuel = movementData.currentLeftFuel;
+            gameData.rightFuel = movementData.currentRightFuel;
         }
     }
 

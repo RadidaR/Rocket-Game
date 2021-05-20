@@ -13,6 +13,7 @@ public class RocketCollisionScript : MonoBehaviour
     public float damageVelocity;
     public Transform planetChecker;
     public LayerMask damagingLayer;
+    public int platformLayer;
 
     
     public GameObject brokenRocket;
@@ -25,9 +26,16 @@ public class RocketCollisionScript : MonoBehaviour
     public GameObject currentPlanet;
     public float checkpointCounter;
 
+    public GameEvent eFirstLand;
+    public GameEvent eCheckPoint;
+    public GameManagerScript gameManager;
+
+    bool coroutineRunning;
+
     private void Awake()
     {
         statsData.currentLives = statsData.maxLives;
+        eFirstLand.Raise();
     }
 
     private void Update()
@@ -49,11 +57,14 @@ public class RocketCollisionScript : MonoBehaviour
     {
         if (statsData.currentLives > 0)
         {
-            statsData.currentLives -= 1;
+            if (!coroutineRunning)
+            {
+                statsData.currentLives -= 1;
 
-            rb.velocity = Vector2.zero;
+                rb.velocity = Vector2.zero;
 
-            StartCoroutine(Explode());
+                StartCoroutine(Explode());
+            }
         }
         else
         {
@@ -68,6 +79,7 @@ public class RocketCollisionScript : MonoBehaviour
         rb.gameObject.transform.rotation = gameData.lastPlatformRotation;
 
         rb.constraints = RigidbodyConstraints2D.None;
+
         movementData.currentMainFuel = gameData.mainFuel;
         movementData.currentLeftFuel = gameData.leftFuel;
         movementData.currentRightFuel = gameData.rightFuel;
@@ -78,28 +90,27 @@ public class RocketCollisionScript : MonoBehaviour
         inputData.lBreakInput = 0;
         inputData.rBreakInput = 0;
 
-        GetComponent<EdgeCollider2D>().enabled = true;
+        GetComponent<PolygonCollider2D>().enabled = true;
 
         sprites.SetActive(true);
     }
 
     IEnumerator Explode()
     {
+        coroutineRunning = true;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
-        GetComponent<EdgeCollider2D>().enabled = false;
+        GetComponent<PolygonCollider2D>().enabled = false;
 
         explosionEffector.SetActive(true);
         sprites.SetActive(false);
         explosion.Play();
-        GameObject brokenBits = Instantiate(brokenRocket, rb.gameObject.transform.position, rb.gameObject.transform.rotation);
-        //brokenBits.transform.SetParent(null);
-        //yield return new WaitForSecondsRealtime(0.35f);
-        //rb.gameObject.SetActive(true);
+        Instantiate(brokenRocket, rb.gameObject.transform.position, rb.gameObject.transform.rotation);
         yield return new WaitForSecondsRealtime(0.5f);
         statsData.respawning = true;
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(0.75f);
         explosionEffector.SetActive(false);
         Respawn();
+        coroutineRunning = false;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -111,6 +122,14 @@ public class RocketCollisionScript : MonoBehaviour
         //{
         //    Die();
         //}
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 8)
+        {
+            collision.gameObject.GetComponent<Collider2D>().enabled = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -130,41 +149,32 @@ public class RocketCollisionScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 6)
+        if (collision.gameObject.layer == platformLayer)
         {
-            checkpointCounter -= Time.deltaTime;
-            if (rb.velocity == Vector2.zero && rb.angularVelocity == 0)
+            if (Mathf.Abs(rb.velocity.x) < 0.5f && Mathf.Abs(rb.velocity.y) < 0.5f)
             {
-                RaycastHit2D platfromBelow = Physics2D.Raycast(rb.transform.position, planetChecker.position - rb.transform.position, 3, 7);
+                RaycastHit2D platfromBelow = Physics2D.Raycast(rb.transform.position, planetChecker.position - rb.transform.position, 3, damagingLayer);
 
-                if (platfromBelow && checkpointCounter <= 0)
-                {
-                    //gameData.lastPlatformPosition = rb.transform.position;
-                    //gameData.lastPlatformRotation = rb.transform.rotation;
+                if (platfromBelow)
+                { 
                     currentPlanet = collision.gameObject.transform.parent.gameObject.transform.parent.gameObject;
+                    eCheckPoint.Raise();
 
-                    Debug.Log(collision.gameObject.transform.parent.gameObject.transform.GetChild(1).gameObject.name.ToString());
-
-                    gameData.lastPlatformPosition = collision.gameObject.transform.parent.transform.GetChild(1).transform.position;
-                    gameData.lastPlatformRotation = collision.gameObject.transform.parent.transform.GetChild(1).transform.rotation;
-
-                    gameData.mainFuel = movementData.currentMainFuel;
-                    gameData.leftFuel = movementData.currentLeftFuel;
-                    gameData.rightFuel = movementData.currentRightFuel;
+                    if (currentPlanet == gameManager.nextPlanet)
+                    {                        
+                        eFirstLand.Raise();
+                    }
                 }
             }
-            
-            //if (rb.velocity == Vector2.zero)
-            //{
-                
-            //}
         }
     }
+
+
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         statsData.nearPlatform = false;
-        checkpointCounter = 1;
+        checkpointCounter = 0.5f;
     }
 
     private void OnDrawGizmos()

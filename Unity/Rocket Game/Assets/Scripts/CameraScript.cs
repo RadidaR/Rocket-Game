@@ -24,7 +24,7 @@ public class CameraScript : MonoBehaviour
 
     ActionMaps inputActions;
 
-    bool coroutineRunning;
+    //bool coroutineRunning;
 
 
 
