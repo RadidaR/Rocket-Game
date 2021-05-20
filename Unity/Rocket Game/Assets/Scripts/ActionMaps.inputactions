@@ -44,6 +44,30 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Camera Control",
+                    "type": "Value",
+                    "id": "a94ae61d-3dd3-444c-9cf0-fca691999019",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Zoom In",
+                    "type": "Value",
+                    "id": "026747a8-6df7-49bd-8a26-d1e815e178bd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Zoom Out",
+                    "type": "Button",
+                    "id": "253675a4-1dae-4482-8927-156ed99b1304",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -99,6 +123,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Right Break",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b3151cc6-aabd-46d5-ad84-8e79d0e3f23c",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Camera Control",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8cd7f93b-f7b9-40e7-8d2e-a50de445a1bb",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zoom In",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1bd6c86a-1d1d-4e43-9b4a-5b7d56f81d03",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zoom Out",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

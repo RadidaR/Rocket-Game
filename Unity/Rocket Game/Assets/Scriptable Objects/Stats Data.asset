@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 0
   currentLives: 0
-  nearPlatform: 0
+  respawning: 1
+  nearPlatform: 1

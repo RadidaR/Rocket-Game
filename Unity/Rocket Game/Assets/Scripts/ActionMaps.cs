@@ -57,6 +57,30 @@ public class @ActionMaps : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Camera Control"",
+                    ""type"": ""Value"",
+                    ""id"": ""a94ae61d-3dd3-444c-9cf0-fca691999019"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Zoom In"",
+                    ""type"": ""Value"",
+                    ""id"": ""026747a8-6df7-49bd-8a26-d1e815e178bd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Zoom Out"",
+                    ""type"": ""Button"",
+                    ""id"": ""253675a4-1dae-4482-8927-156ed99b1304"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -114,6 +138,39 @@ public class @ActionMaps : IInputActionCollection, IDisposable
                     ""action"": ""Right Break"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b3151cc6-aabd-46d5-ad84-8e79d0e3f23c"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Camera Control"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8cd7f93b-f7b9-40e7-8d2e-a50de445a1bb"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Zoom In"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1bd6c86a-1d1d-4e43-9b4a-5b7d56f81d03"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Zoom Out"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -127,6 +184,9 @@ public class @ActionMaps : IInputActionCollection, IDisposable
         m_Gameplay_RightThruster = m_Gameplay.FindAction("Right Thruster", throwIfNotFound: true);
         m_Gameplay_LeftBreak = m_Gameplay.FindAction("Left Break", throwIfNotFound: true);
         m_Gameplay_RightBreak = m_Gameplay.FindAction("Right Break", throwIfNotFound: true);
+        m_Gameplay_CameraControl = m_Gameplay.FindAction("Camera Control", throwIfNotFound: true);
+        m_Gameplay_ZoomIn = m_Gameplay.FindAction("Zoom In", throwIfNotFound: true);
+        m_Gameplay_ZoomOut = m_Gameplay.FindAction("Zoom Out", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -181,6 +241,9 @@ public class @ActionMaps : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_RightThruster;
     private readonly InputAction m_Gameplay_LeftBreak;
     private readonly InputAction m_Gameplay_RightBreak;
+    private readonly InputAction m_Gameplay_CameraControl;
+    private readonly InputAction m_Gameplay_ZoomIn;
+    private readonly InputAction m_Gameplay_ZoomOut;
     public struct GameplayActions
     {
         private @ActionMaps m_Wrapper;
@@ -190,6 +253,9 @@ public class @ActionMaps : IInputActionCollection, IDisposable
         public InputAction @RightThruster => m_Wrapper.m_Gameplay_RightThruster;
         public InputAction @LeftBreak => m_Wrapper.m_Gameplay_LeftBreak;
         public InputAction @RightBreak => m_Wrapper.m_Gameplay_RightBreak;
+        public InputAction @CameraControl => m_Wrapper.m_Gameplay_CameraControl;
+        public InputAction @ZoomIn => m_Wrapper.m_Gameplay_ZoomIn;
+        public InputAction @ZoomOut => m_Wrapper.m_Gameplay_ZoomOut;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -214,6 +280,15 @@ public class @ActionMaps : IInputActionCollection, IDisposable
                 @RightBreak.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRightBreak;
                 @RightBreak.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRightBreak;
                 @RightBreak.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRightBreak;
+                @CameraControl.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnCameraControl;
+                @CameraControl.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnCameraControl;
+                @CameraControl.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnCameraControl;
+                @ZoomIn.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnZoomIn;
+                @ZoomIn.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnZoomIn;
+                @ZoomIn.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnZoomIn;
+                @ZoomOut.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnZoomOut;
+                @ZoomOut.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnZoomOut;
+                @ZoomOut.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnZoomOut;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -233,6 +308,15 @@ public class @ActionMaps : IInputActionCollection, IDisposable
                 @RightBreak.started += instance.OnRightBreak;
                 @RightBreak.performed += instance.OnRightBreak;
                 @RightBreak.canceled += instance.OnRightBreak;
+                @CameraControl.started += instance.OnCameraControl;
+                @CameraControl.performed += instance.OnCameraControl;
+                @CameraControl.canceled += instance.OnCameraControl;
+                @ZoomIn.started += instance.OnZoomIn;
+                @ZoomIn.performed += instance.OnZoomIn;
+                @ZoomIn.canceled += instance.OnZoomIn;
+                @ZoomOut.started += instance.OnZoomOut;
+                @ZoomOut.performed += instance.OnZoomOut;
+                @ZoomOut.canceled += instance.OnZoomOut;
             }
         }
     }
@@ -244,5 +328,8 @@ public class @ActionMaps : IInputActionCollection, IDisposable
         void OnRightThruster(InputAction.CallbackContext context);
         void OnLeftBreak(InputAction.CallbackContext context);
         void OnRightBreak(InputAction.CallbackContext context);
+        void OnCameraControl(InputAction.CallbackContext context);
+        void OnZoomIn(InputAction.CallbackContext context);
+        void OnZoomOut(InputAction.CallbackContext context);
     }
 }

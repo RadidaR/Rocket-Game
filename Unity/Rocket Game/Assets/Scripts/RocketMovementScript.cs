@@ -69,11 +69,19 @@ public class RocketMovementScript : MonoBehaviour
             Move(mainThrusterRB, movementData.mainThrusterForce, inputData.mThrustInput, movementData.currentMainFuel, mainParticle);
             movementData.currentMainFuel = DrainFuel(movementData.currentMainFuel, movementData.mainFuelDrainRate, inputData.mThrustInput);
         }
+        else
+        {
+            mainParticle.Stop();
+        }
 
         if (inputData.lThrustInput != 0)
         {
             Move(leftThrusterRB, movementData.sideThrustersForce, inputData.lThrustInput, movementData.currentLeftFuel, leftThrusterParticle);
             movementData.currentLeftFuel = DrainFuel(movementData.currentLeftFuel, movementData.sideFuelDrainRate, inputData.lThrustInput);
+        }
+        else
+        {
+            leftThrusterParticle.Stop();
         }
 
         if (inputData.rThrustInput != 0)
@@ -81,18 +89,30 @@ public class RocketMovementScript : MonoBehaviour
             Move(rightThrusterRB, movementData.sideThrustersForce, inputData.rThrustInput, movementData.currentRightFuel, rightThrusterParticle);
             movementData.currentRightFuel = DrainFuel(movementData.currentRightFuel, movementData.sideFuelDrainRate, inputData.rThrustInput);
         }
+        else
+        {
+            rightThrusterParticle.Stop();
+        }
 
         if (inputData.lBreakInput != 0)
         {
             Move(leftBreakRB, movementData.breakThrustersForce, inputData.lBreakInput, movementData.currentLeftFuel, leftBreakParticle);
             movementData.currentLeftFuel = DrainFuel(movementData.currentLeftFuel, movementData.breakFuelDrainRate, inputData.lBreakInput);
         }
+        else
+        {
+            leftBreakParticle.Stop();
+        }
 
         if (inputData.rBreakInput != 0)
         { 
             Move(rightBreakRB, movementData.breakThrustersForce, inputData.rBreakInput, movementData.currentRightFuel, rightBreakParticle);
             movementData.currentRightFuel = DrainFuel(movementData.currentRightFuel, movementData.breakFuelDrainRate, inputData.rBreakInput);
-        }        
+        }     
+        else
+        {
+            rightBreakParticle.Stop();
+        }
     }
 
     void Move(Rigidbody2D rb, float force, float direction, float currentFuel, ParticleSystem fire)

@@ -1,0 +1,1005 @@
+fileFormatVersion: 2
+guid: 21e7c8439b4385b4a85c7404783a31bd
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Right Leg Piece Outline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 787
+      width: 77
+      height: 180
+    spriteID: 1d8bd56b0b1059945846ce5ddfda7a3e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -194, y: 709}
+  - name: 'Right Leg Piece Colour '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 975
+      width: 73
+      height: 176
+    spriteID: 3a5858c6396b3274fa91845aef08b0a8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -196, y: 893}
+  - name: Left Leg Piece Outline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 228
+      y: 1738
+      width: 78
+      height: 182
+    spriteID: dd06adb9e3baea945ac62af4c4e9162e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 120, y: 1667}
+  - name: Left Leg Piece Colour
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 1159
+      width: 73
+      height: 173
+    spriteID: bc86e99d3dccf7942858e65b01a18584
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 207, y: 1083}
+  - name: Left Piece Tank Outline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 228
+      y: 1928
+      width: 62
+      height: 114
+    spriteID: 674657d20668fbf4bb1290ba52cd53fd
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 179, y: 1616}
+  - name: Left Piece Tank Colour
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 243
+      y: 1543
+      width: 61
+      height: 111
+    spriteID: e57c3ac0dce905546a9d6509483dd916
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 195, y: 1230}
+  - name: Left Piece Tank Background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 1877
+      width: 28
+      height: 59
+    spriteID: 60828efa02e86ee41a20f0f2d479f90d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 252, y: 1530}
+  - name: Left Piece Outline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 282
+      width: 183
+      height: 275
+    spriteID: c9d2c1a174147c942ab3623f61d556da
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 273, y: 9}
+  - name: Left Piece Colour
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 4
+      width: 219
+      height: 270
+    spriteID: 252cfc980779fcf4caff9600b59aeb76
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 268, y: -272}
+  - name: Left Piece Window
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 243
+      y: 1662
+      width: 58
+      height: 56
+    spriteID: 058d0f29bfcaed541b5686a83ab737b3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 116, y: 1217}
+  - name: Left Piece Thruster Outline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 1606
+      width: 48
+      height: 54
+    spriteID: dee9482b8cb8b3e4881364dd29f7c7a2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 312, y: 1290}
+  - name: Left Piece Thrusters Colour
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 1730
+      width: 43
+      height: 47
+    spriteID: 9a41c724afb434a49b733375f2a8c36a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 310, y: 1412}
+  - name: Corner Piece Outline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1738
+      width: 216
+      height: 298
+    spriteID: 6cca4e35719ced544998d06488201eec
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -4, y: 1732}
+  - name: Corner Piece Colour
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1421
+      width: 231
+      height: 309
+    spriteID: 04cbeab955c564843880354c0794f532
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -9, y: 1412}
+  - name: Corner Piece Sludge Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 565
+      width: 179
+      height: 214
+    spriteID: 4700879a6df2f4f4eb010858c0d5a8e2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 271, y: 501}
+  - name: Right Piece Outline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 243
+      y: 1421
+      width: 62
+      height: 114
+    spriteID: 6649de9568f095e4db49c080ad0d31b8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -230, y: 1056}
+  - name: Right Piece Tank Colour
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 1487
+      width: 61
+      height: 111
+    spriteID: 41755235179da834cbce1a6fabb498ad
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -157, y: 1120}
+  - name: Right Piece Tank Background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 1944
+      width: 28
+      height: 59
+    spriteID: 26a2b28b25886e6468b95c1e8fe0104f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -173, y: 1543}
+  - name: Right Piece Outline_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 585
+      width: 282
+      height: 412
+    spriteID: 4c52c519a2e97ad42b124aa9db5f1556
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -256, y: 307}
+  - name: Right piece sludge Colour
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 1340
+      width: 70
+      height: 139
+    spriteID: 48a804a579ee9e447b704b4fbecefcbd
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -73, y: 955}
+  - name: Right Piece Colour
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1005
+      width: 267
+      height: 408
+    spriteID: 366454b6f26dcc44cb3cf48d28f1b90b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -266, y: 729}
+  - name: Right Piece Break Outline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 353
+      y: 1877
+      width: 33
+      height: 33
+    spriteID: b0e5616600ba9d64ea240d7ca6c2da93
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -170, y: 1451}
+  - name: Right Piece Break Colour
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 2011
+      width: 28
+      height: 30
+    spriteID: 353a89090adc85e4e875775f0a149d97
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -210, y: 1582}
+  - name: 'Right Piece Thruster Outline '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 1668
+      width: 48
+      height: 54
+    spriteID: ebffcc9d7955bca4e8b7387afcf18957
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -215, y: 1303}
+  - name: Right Piece Thruster Colour
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 1785
+      width: 43
+      height: 47
+    spriteID: 8d9adba90f9fbb14e9af3e0209b5b5d0
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -218, y: 1418}
+  - name: Bottom Piece Outline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 305
+      height: 573
+    spriteID: a94a3577dcf8f1943a84ba9c7f86b4b9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -203, y: -39}
+  - name: Bottom Piece sludge Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 1840
+      width: 64
+      height: 29
+    spriteID: 095a218140b68444c8ca4da2d552df8e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 99, y: 1692}
+  - name: Bottom Piece Color
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 544
+      y: 4
+      width: 300
+      height: 189
+    spriteID: 38e4ea888fbf0684881c16e6183f1c60
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 335, y: -39}
+  - name: Bottom Piece tank Background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 544
+      y: 201
+      width: 147
+      height: 21
+    spriteID: 254791ee647b67549b9316d4bf48a3a4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 297, y: 140}
+  platformSettings: []
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 1024
+  importedTextureHeight: 2048
+  documentSize: {x: 600, y: 697}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 1024
+  textureActualHeight: 2048
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Right Leg Piece
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 0
+    mosaicPosition: {x: 0, y: 0}
+  - name: Right Leg Piece Outline
+    spriteName: Right Leg Piece Outline
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 1d8bd56b0b1059945846ce5ddfda7a3e
+    layerID: 1541327636
+    mosaicPosition: {x: 317, y: 787}
+  - name: 'Right Leg Piece Colour '
+    spriteName: 'Right Leg Piece Colour '
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 3a5858c6396b3274fa91845aef08b0a8
+    layerID: -921006526
+    mosaicPosition: {x: 317, y: 975}
+  - name: Left Leg Piece
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: -2074759093
+    mosaicPosition: {x: 0, y: 0}
+  - name: Left Leg Piece Outline
+    spriteName: Left Leg Piece Outline
+    isGroup: 0
+    parentIndex: 3
+    spriteID: dd06adb9e3baea945ac62af4c4e9162e
+    layerID: 553406671
+    mosaicPosition: {x: 228, y: 1738}
+  - name: Left Leg Piece Colour
+    spriteName: Left Leg Piece Colour
+    isGroup: 0
+    parentIndex: 3
+    spriteID: bc86e99d3dccf7942858e65b01a18584
+    layerID: -45601541
+    mosaicPosition: {x: 317, y: 1159}
+  - name: Left Piece
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: -31363879
+    mosaicPosition: {x: 0, y: 0}
+  - name: Left Piece Tank Outline
+    spriteName: Left Piece Tank Outline
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 674657d20668fbf4bb1290ba52cd53fd
+    layerID: 52286789
+    mosaicPosition: {x: 228, y: 1928}
+  - name: Left Piece Tank Colour
+    spriteName: Left Piece Tank Colour
+    isGroup: 0
+    parentIndex: 6
+    spriteID: e57c3ac0dce905546a9d6509483dd916
+    layerID: -4893295
+    mosaicPosition: {x: 243, y: 1543}
+  - name: Left Piece Tank Background
+    spriteName: Left Piece Tank Background
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 60828efa02e86ee41a20f0f2d479f90d
+    layerID: 1174396795
+    mosaicPosition: {x: 317, y: 1877}
+  - name: Left Piece Outline
+    spriteName: Left Piece Outline
+    isGroup: 0
+    parentIndex: 6
+    spriteID: c9d2c1a174147c942ab3623f61d556da
+    layerID: 217500529
+    mosaicPosition: {x: 317, y: 282}
+  - name: Left Piece Colour
+    spriteName: Left Piece Colour
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 252cfc980779fcf4caff9600b59aeb76
+    layerID: 1558570445
+    mosaicPosition: {x: 317, y: 4}
+  - name: Left Piece Window
+    spriteName: Left Piece Window
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 058d0f29bfcaed541b5686a83ab737b3
+    layerID: 1328722489
+    mosaicPosition: {x: 243, y: 1662}
+  - name: Left Piece Thruster Outline
+    spriteName: Left Piece Thruster Outline
+    isGroup: 0
+    parentIndex: 6
+    spriteID: dee9482b8cb8b3e4881364dd29f7c7a2
+    layerID: -467112488
+    mosaicPosition: {x: 317, y: 1606}
+  - name: Left Piece Thrusters Colour
+    spriteName: Left Piece Thrusters Colour
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 9a41c724afb434a49b733375f2a8c36a
+    layerID: 856593053
+    mosaicPosition: {x: 317, y: 1730}
+  - name: Corner Piece
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: -1259226663
+    mosaicPosition: {x: 0, y: 0}
+  - name: Corner Piece Outline
+    spriteName: Corner Piece Outline
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 6cca4e35719ced544998d06488201eec
+    layerID: -1910680703
+    mosaicPosition: {x: 4, y: 1738}
+  - name: Corner Piece Colour
+    spriteName: Corner Piece Colour
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 04cbeab955c564843880354c0794f532
+    layerID: -275940651
+    mosaicPosition: {x: 4, y: 1421}
+  - name: Corner Piece Sludge Color
+    spriteName: Corner Piece Sludge Color
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 4700879a6df2f4f4eb010858c0d5a8e2
+    layerID: 1081720110
+    mosaicPosition: {x: 317, y: 565}
+  - name: Right Piece
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: -1070414886
+    mosaicPosition: {x: 0, y: 0}
+  - name: Right Piece Outline
+    spriteName: Right Piece Outline
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 6649de9568f095e4db49c080ad0d31b8
+    layerID: -2108690944
+    mosaicPosition: {x: 243, y: 1421}
+  - name: Right Piece Tank Colour
+    spriteName: Right Piece Tank Colour
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 41755235179da834cbce1a6fabb498ad
+    layerID: -939314318
+    mosaicPosition: {x: 317, y: 1487}
+  - name: Right Piece Tank Background
+    spriteName: Right Piece Tank Background
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 26a2b28b25886e6468b95c1e8fe0104f
+    layerID: 340673878
+    mosaicPosition: {x: 317, y: 1944}
+  - name: Right Piece Outline
+    spriteName: Right Piece Outline_1
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 4c52c519a2e97ad42b124aa9db5f1556
+    layerID: -2003272656
+    mosaicPosition: {x: 4, y: 585}
+  - name: Right piece sludge Colour
+    spriteName: Right piece sludge Colour
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 48a804a579ee9e447b704b4fbecefcbd
+    layerID: 1296668420
+    mosaicPosition: {x: 317, y: 1340}
+  - name: Right Piece Colour
+    spriteName: Right Piece Colour
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 366454b6f26dcc44cb3cf48d28f1b90b
+    layerID: -379535558
+    mosaicPosition: {x: 4, y: 1005}
+  - name: Right Piece Break Outline
+    spriteName: Right Piece Break Outline
+    isGroup: 0
+    parentIndex: 19
+    spriteID: b0e5616600ba9d64ea240d7ca6c2da93
+    layerID: -30662431
+    mosaicPosition: {x: 353, y: 1877}
+  - name: Right Piece Break Colour
+    spriteName: Right Piece Break Colour
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 353a89090adc85e4e875775f0a149d97
+    layerID: 815475661
+    mosaicPosition: {x: 317, y: 2011}
+  - name: 'Right Piece Thruster Outline '
+    spriteName: 'Right Piece Thruster Outline '
+    isGroup: 0
+    parentIndex: 19
+    spriteID: ebffcc9d7955bca4e8b7387afcf18957
+    layerID: 600822173
+    mosaicPosition: {x: 317, y: 1668}
+  - name: Right Piece Thruster Colour
+    spriteName: Right Piece Thruster Colour
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 8d9adba90f9fbb14e9af3e0209b5b5d0
+    layerID: 1650970849
+    mosaicPosition: {x: 317, y: 1785}
+  - name: Bottom Piece
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: -1791090331
+    mosaicPosition: {x: 0, y: 0}
+  - name: Bottom Piece Outline
+    spriteName: Bottom Piece Outline
+    isGroup: 0
+    parentIndex: 30
+    spriteID: a94a3577dcf8f1943a84ba9c7f86b4b9
+    layerID: -1386392475
+    mosaicPosition: {x: 4, y: 4}
+  - name: Bottom Piece sludge Color
+    spriteName: Bottom Piece sludge Color
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 095a218140b68444c8ca4da2d552df8e
+    layerID: 495002992
+    mosaicPosition: {x: 317, y: 1840}
+  - name: Bottom Piece Color
+    spriteName: Bottom Piece Color
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 38e4ea888fbf0684881c16e6183f1c60
+    layerID: 854808172
+    mosaicPosition: {x: 544, y: 4}
+  - name: Bottom Piece tank Background
+    spriteName: Bottom Piece tank Background
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 254791ee647b67549b9316d4bf48a3a4
+    layerID: 338004875
+    mosaicPosition: {x: 544, y: 201}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: Broken Rocket 2 PSB Texture
+  prefabAssetName: Broken Rocket 2 PSB Prefab
+  spriteLibAssetName: Broken Rocket 2 PSB Sprite Lib
+  secondarySpriteTextures: []
