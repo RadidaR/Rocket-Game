@@ -9,6 +9,7 @@ public class RocketMovementScript : MonoBehaviour
 
     public InputData inputData;
     public MovementData movementData;
+    public StatsData statsData;
 
     [Header("RigidBodies")]
     public Rigidbody2D mainThrusterRB;
@@ -24,29 +25,53 @@ public class RocketMovementScript : MonoBehaviour
     public ParticleSystem leftBreakParticle;
     public ParticleSystem rightBreakParticle;
 
+    public ParticleSystem[] mainThrusterParticles;
+
+    //public GameEvent eMainThrusterActivated;
+    //public GameEvent eSideThrusterActivated;
+
     void Awake()
     {
         inputActions = new ActionMaps();
 
         inputActions.Gameplay.MainThruster.performed += ctx => inputData.mThrustInput = inputActions.Gameplay.MainThruster.ReadValue<float>();
+        inputActions.Gameplay.MainThruster.performed += ctx => FindObjectOfType<AudioManager>().PlaySound("audio_main_thruster");
         inputActions.Gameplay.MainThruster.canceled += ctx => inputData.mThrustInput = inputActions.Gameplay.MainThruster.ReadValue<float>();
-        inputActions.Gameplay.MainThruster.canceled += ctx => mainParticle.Stop();
+        inputActions.Gameplay.MainThruster.canceled += ctx => StopMainParticles();
+        inputActions.Gameplay.MainThruster.canceled += ctx => FindObjectOfType<AudioManager>().StopSound("audio_main_thruster");
 
         inputActions.Gameplay.LeftThruster.performed += ctx => inputData.lThrustInput = inputActions.Gameplay.LeftThruster.ReadValue<float>();
+        inputActions.Gameplay.LeftThruster.performed += ctx => PlaySideThrusterSound();
         inputActions.Gameplay.LeftThruster.canceled += ctx => inputData.lThrustInput = inputActions.Gameplay.LeftThruster.ReadValue<float>();
+        inputActions.Gameplay.LeftThruster.canceled += ctx => StopSideThrusterSound();
         inputActions.Gameplay.LeftThruster.canceled += ctx => leftThrusterParticle.Stop();
 
         inputActions.Gameplay.RightThruster.performed += ctx => inputData.rThrustInput = inputActions.Gameplay.RightThruster.ReadValue<float>();
+        inputActions.Gameplay.RightThruster.performed += ctx => PlaySideThrusterSound();
         inputActions.Gameplay.RightThruster.canceled += ctx => inputData.rThrustInput = inputActions.Gameplay.RightThruster.ReadValue<float>();
+        inputActions.Gameplay.RightThruster.canceled += ctx => StopSideThrusterSound();
         inputActions.Gameplay.RightThruster.canceled += ctx => rightThrusterParticle.Stop();
 
         inputActions.Gameplay.LeftBreak.performed += ctx => inputData.lBreakInput = inputActions.Gameplay.LeftBreak.ReadValue<float>() * -1;
+        inputActions.Gameplay.LeftBreak.performed += ctx => PlaySideThrusterSound();
         inputActions.Gameplay.LeftBreak.canceled += ctx => inputData.lBreakInput = inputActions.Gameplay.LeftBreak.ReadValue<float>();
+        inputActions.Gameplay.LeftBreak.canceled += ctx => StopSideThrusterSound();
         inputActions.Gameplay.LeftBreak.canceled += ctx => leftBreakParticle.Stop();
 
         inputActions.Gameplay.RightBreak.performed += ctx => inputData.rBreakInput = inputActions.Gameplay.RightBreak.ReadValue<float>() * -1;
+        inputActions.Gameplay.RightBreak.performed += ctx => PlaySideThrusterSound();
         inputActions.Gameplay.RightBreak.canceled += ctx => inputData.rBreakInput = inputActions.Gameplay.RightBreak.ReadValue<float>();
+        inputActions.Gameplay.RightBreak.canceled += ctx => StopSideThrusterSound();
         inputActions.Gameplay.RightBreak.canceled += ctx => rightBreakParticle.Stop();
+
+        inputActions.Gameplay.Break.performed += ctx => inputData.rBreakInput = inputActions.Gameplay.Break.ReadValue<float>() * -1;
+        inputActions.Gameplay.Break.performed += ctx => inputData.lBreakInput = inputActions.Gameplay.Break.ReadValue<float>() * -1;
+        inputActions.Gameplay.Break.performed += ctx => PlaySideThrusterSound();
+        inputActions.Gameplay.Break.canceled += ctx => inputData.rBreakInput = inputActions.Gameplay.Break.ReadValue<float>();
+        inputActions.Gameplay.Break.canceled += ctx => inputData.lBreakInput = inputActions.Gameplay.Break.ReadValue<float>();
+        inputActions.Gameplay.Break.canceled += ctx => StopSideThrusterSound();
+        inputActions.Gameplay.Break.canceled += ctx => leftBreakParticle.Stop();
+        inputActions.Gameplay.Break.canceled += ctx => rightBreakParticle.Stop();
     }
 
     private void Start()
@@ -62,16 +87,27 @@ public class RocketMovementScript : MonoBehaviour
         rightBreakParticle.Stop();
     }
 
+    void PlaySideThrusterSound()
+    {
+        FindObjectOfType<AudioManager>().PlaySound("audio_side_thruster");
+    }
+
+    void StopSideThrusterSound()
+    {
+        FindObjectOfType<AudioManager>().StopSound("audio_side_thruster");
+    }
+
     void FixedUpdate()
     {
         if (inputData.mThrustInput != 0)
         {
-            Move(mainThrusterRB, movementData.mainThrusterForce, inputData.mThrustInput, movementData.currentMainFuel, mainParticle);
+            //Move(mainThrusterRB, movementData.mainThrusterForce, inputData.mThrustInput, movementData.currentMainFuel, mainParticle);
+            Move(mainThrusterRB, movementData.mainThrusterForce, inputData.mThrustInput, movementData.currentMainFuel, mainThrusterParticles[0]);
             movementData.currentMainFuel = DrainFuel(movementData.currentMainFuel, movementData.mainFuelDrainRate, inputData.mThrustInput);
         }
         else
         {
-            mainParticle.Stop();
+            StopMainParticles();
         }
 
         if (inputData.lThrustInput != 0)
@@ -113,18 +149,55 @@ public class RocketMovementScript : MonoBehaviour
         {
             rightBreakParticle.Stop();
         }
+
+        if (movementData.currentMainFuel <= 0)
+        {
+            StopMainParticles();
+            FindObjectOfType<AudioManager>().StopSound("audio_main_thruster");
+        }
+
+        if (movementData.currentLeftFuel <= 0)
+        {
+            StopSideThrusterSound();
+            leftThrusterParticle.Stop();
+            leftBreakParticle.Stop();
+        }
+
+        if (movementData.currentRightFuel <= 0)
+        {
+            StopSideThrusterSound();
+            rightThrusterParticle.Stop();
+            rightBreakParticle.Stop();
+        }
     }
 
-    void Move(Rigidbody2D rb, float force, float direction, float currentFuel, ParticleSystem fire)
+    void StopMainParticles()
+    {
+        foreach (ParticleSystem particle in mainThrusterParticles)
+        {
+            particle.Stop();
+        }
+    }
+
+    void Move(Rigidbody2D rb, float force, float direction, float currentFuel, ParticleSystem particles)
     {
         if (currentFuel != 0)
         {
+            statsData.canRefuel = false;
             rb.AddRelativeForce(Vector2.up * force * direction);
-            fire.Play();
+            particles.Play();
+
+            if (particles == mainThrusterParticles[0])
+            {
+                foreach (ParticleSystem particle in mainThrusterParticles)
+                {
+                    particle.Play();
+                }
+            }
         }
         else
         {
-            fire.Stop();
+            particles.Stop();
         }
     }
 

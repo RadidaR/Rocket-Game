@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: Planets Library
+  m_EditorClassIdentifier: 
+  m_Labels:
+  - m_Name: Part A
+    m_Hash: 529468054
+    m_CategoryList:
+    - m_Name: Planet 1 A
+      m_Hash: 1655613128
+      m_Sprite: {fileID: 457962189958101916, guid: d22e0f434533767438eca2defe3e3404, type: 3}
+    - m_Name: Planet 2 A
+      m_Hash: 1625823377
+      m_Sprite: {fileID: 5754304993237732531, guid: a9a48dae9bf47a540a557ae60d0f43b9, type: 3}
+    - m_Name: Planet 3 A
+      m_Hash: 1630171814
+      m_Sprite: {fileID: 8349618957440723316, guid: 46aa9fa97684b1144a327bee6bfde824, type: 3}
+    - m_Name: Planet 4 A
+      m_Hash: 1684366371
+      m_Sprite: {fileID: -1499455087491038927, guid: d4362d27d76e3e34ebdecfc4f83daace, type: 3}
+    - m_Name: Planet 5 A
+      m_Hash: 1705446932
+      m_Sprite: {fileID: -354521373537502997, guid: cfb414ceb44f6ef468273c25eaa67a09, type: 3}
+    - m_Name: Planet 6 A
+      m_Hash: 1742843981
+      m_Sprite: {fileID: -6085697125743992009, guid: 73eafa75564e2b24ead7d0af86ff3f74, type: 3}
+    - m_Name: Planet 7 A
+      m_Hash: 1713625722
+      m_Sprite: {fileID: -3918224658214420595, guid: bf59331661c9fb94d8d63e832e63202c, type: 3}
+    - m_Name: Planet 8 A
+      m_Hash: 1837079879
+      m_Sprite: {fileID: 2587309601005862458, guid: b61b7d5a968cdb842a848068047ab081, type: 3}
+  - m_Name: Part B
+    m_Hash: -2038015188
+    m_CategoryList:
+    - m_Name: Planet 1 B
+      m_Hash: -72878222
+      m_Sprite: {fileID: -883038018415561029, guid: d22e0f434533767438eca2defe3e3404, type: 3}
+    - m_Name: Planet 2 B
+      m_Hash: -102676181
+      m_Sprite: {fileID: 2460539935015283466, guid: a9a48dae9bf47a540a557ae60d0f43b9, type: 3}
+    - m_Name: Planet 3 B
+      m_Hash: -131914980
+      m_Sprite: {fileID: -8223787097492800792, guid: 46aa9fa97684b1144a327bee6bfde824, type: 3}
+    - m_Name: Planet 4 B
+      m_Hash: -43240039
+      m_Sprite: {fileID: 4957226769635615948, guid: d4362d27d76e3e34ebdecfc4f83daace, type: 3}
+    - m_Name: Planet 5 B
+      m_Hash: -55681106
+      m_Sprite: {fileID: -6490302310130517835, guid: cfb414ceb44f6ef468273c25eaa67a09, type: 3}
+    - m_Name: Planet 6 B
+      m_Hash: -18292233
+      m_Sprite: {fileID: 1539854712425047023, guid: 73eafa75564e2b24ead7d0af86ff3f74, type: 3}
+    - m_Name: Planet 7 B
+      m_Hash: -30766144
+      m_Sprite: {fileID: -4247557002161743764, guid: bf59331661c9fb94d8d63e832e63202c, type: 3}
+    - m_Name: Planet 8 B
+      m_Hash: -193540867
+      m_Sprite: {fileID: -6210053011658782621, guid: b61b7d5a968cdb842a848068047ab081, type: 3}

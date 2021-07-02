@@ -1,0 +1,13 @@
+Button Click - Casual Game Sounds - " DM-CGS-32 "
+Checkpoint - Casual Game Sounds - " DM-CGS-18 "
+Pick-Up - Casual Game Sounds - " DM-CGS-26 "
+Explosion - RPG & Dungeon Sounds - " Big Explosion 8 "
+Metal Impact - Epidemic Sound - " Impact Metal 1 "
+Main Thruster - Epidemic Sound - " Rocket Booster 14 "
+Side Thrusters / Breaks - Epidemic Sound - " Rocket Booster Loop 1 "
+Main Menu Theme - Absolute Space & Sci-Fi Vol.1 - " Unknown Signals " / " Terrain " 
+Game Over Theme - Absolute Space & Sci-Fi Vol.1 - " Death "
+Game Won Theme - Absolute Space & Sci-Fi Vol.1 - " Hyper "
+Background Music - Sci-Fi Music Pack 1 - " Buying_crap_1 " / " Buying_crap_2 "
+Refueling - Epidemic Sound - " Pour Water 8 "
+

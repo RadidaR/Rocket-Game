@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - RespawnPoint
+  - Life
+  - Fuel
+  - Part
+  - Body
+  - Sludge
+  - Broken Rocket
   layers:
   - Default
   - TransparentFX
@@ -15,10 +21,10 @@ TagManager:
   - Platform
   - Damaging Layer
   - Broken Rocket
-  - 
-  - 
-  - 
-  - 
+  - Boundary
+  - Pick-Up
+  - Indicator Layer
+  - Stuck Pieces
   - 
   - 
   - 
@@ -45,9 +51,12 @@ TagManager:
   - name: Planets
     uniqueID: 324990217
     locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: Rocket
     uniqueID: 2436069477
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: Canvas
+    uniqueID: 187858385
     locked: 0

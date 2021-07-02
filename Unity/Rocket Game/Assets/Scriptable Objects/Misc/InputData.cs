@@ -13,6 +13,13 @@ public class InputData : ScriptableObject, ISerializationCallbackReceiver
     [Range(0, 1)] public float cameraControl;
     [Range(0, 1)] public float zoomIn;
     [Range(0, 1)] public float zoomOut;
+
+    [Range(0, 1)] public float refuelInput;
+    [Range(0, 1)] public float mainTank;
+    [Range(0, 1)] public float leftTank;
+    [Range(0, 1)] public float rightTank;
+
+    
     public void OnAfterDeserialize()
     {
         mThrustInput = reset;
@@ -24,6 +31,11 @@ public class InputData : ScriptableObject, ISerializationCallbackReceiver
         cameraControl = reset;
         zoomIn = reset;
         zoomOut = reset;
+
+        refuelInput = reset;
+        mainTank = reset;
+        leftTank = reset;
+        rightTank = reset;
     }
     public void OnBeforeSerialize()
     {

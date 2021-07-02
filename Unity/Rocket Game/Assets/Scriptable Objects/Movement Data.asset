@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c93b2fda9663c4286ead187f8f3919, type: 3}
   m_Name: Movement Data
   m_EditorClassIdentifier: 
-  mainThrusterForce: 50
+  mainThrusterForce: 35
   sideThrustersForce: 15
   breakThrustersForce: 10
-  currentMainFuel: 483.62067
-  currentLeftFuel: 146.86052
-  currentRightFuel: 147.18039
-  mainTankMaxFuel: 500
-  sideTanksMaxFuel: 150
-  mainFuelDrainRate: 3
-  sideFuelDrainRate: 2
+  currentMainFuel: 0
+  currentLeftFuel: 0
+  currentRightFuel: 0
+  mainTankMaxFuel: 120
+  sideTanksMaxFuel: 50
+  mainFuelDrainRate: 2.5
+  sideFuelDrainRate: 1.5
   breakFuelDrainRate: 1

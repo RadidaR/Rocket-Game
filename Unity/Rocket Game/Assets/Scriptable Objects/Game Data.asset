@@ -14,7 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastPlatformPosition: {x: 0.5388757, y: 313.00146}
   lastPlatformRotation: {x: -0, y: -0, z: -0, w: 1}
-  mainFuel: 499.64
-  leftFuel: 150
-  rightFuel: 150
+  mainFuel: 120
+  leftFuel: 50
+  rightFuel: 50
+  currentColors: 0
+  extraFuel: 0
+  fuelPickUp: 20
+  totalPlanets: 7
   planetsSpawned: 1
+  randomX1: 220
+  randomX2: 250
+  randomY1: 45
+  randomY2: 45
+  startingLifePickUpChance: 0.14
+  startingFuelPickUpChance: 0.15
+  lifePickUpChance: 0.15
+  fuelPickUpChance: 0.2
+  difficultyLevels: 0300000005000000080000000b0000000d0000000f0000001200000015000000
+  easyDifficultyPlanetTotal: 7
+  normalDifficultyPlanetTotal: 15
+  hardDifficultyPlanetTotal: 25
+  returning: 0
+  currentScore: 0

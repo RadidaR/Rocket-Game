@@ -6,7 +6,8 @@ using Cinemachine;
 
 public class CameraScript : MonoBehaviour
 {
-    public CinemachineVirtualCamera vCamera;
+    public CinemachineVirtualCamera vCamera1;
+    public CinemachineVirtualCamera vCamera2;
 
     public float closestPossible;
 
@@ -60,20 +61,31 @@ public class CameraScript : MonoBehaviour
 
     }
 
+    public void ShowReturn()
+    {
+        vCamera2.gameObject.SetActive(true);
+        StartCoroutine(ShowFirstPlanet());
+    }
+
+    IEnumerator ShowFirstPlanet()
+    {
+        yield return new WaitForSeconds(5);
+        vCamera2.gameObject.SetActive(false);
+    }
 
     private void ZoomIn()
     {
-        if (vCamera.m_Lens.OrthographicSize > closestPossible)
+        if (vCamera1.m_Lens.OrthographicSize > closestPossible)
         {
-            vCamera.m_Lens.OrthographicSize -= Time.deltaTime * (zoomModifier + speedUp);
+            vCamera1.m_Lens.OrthographicSize -= Time.deltaTime * (zoomModifier + speedUp);
         }
     }
 
     private void ZoomOut()
     {
-        if (vCamera.m_Lens.OrthographicSize < furthestPossible)
+        if (vCamera1.m_Lens.OrthographicSize < furthestPossible)
         {
-            vCamera.m_Lens.OrthographicSize += Time.deltaTime * (zoomModifier + speedUp);
+            vCamera1.m_Lens.OrthographicSize += Time.deltaTime * (zoomModifier + speedUp);
         }
     }
 
